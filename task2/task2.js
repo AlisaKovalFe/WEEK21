@@ -1,3 +1,35 @@
+document.querySelector('button'). addEventListener('click', (event) => {
+    event.preventDefault();
+
+    let user = {
+        name: document.querySelector('#name').value,
+        surname: document.querySelector('#surname').value,
+        age: document.querySelector('#age').value,
+        town: document.querySelector('#town').value,
+        tel: document.querySelector('#tel').value,
+        email: document.querySelector('#email').value,
+        password: document.querySelector('#password').value,
+        repeatPassword: document.querySelector('#repeatPassword').value,
+    }
+    console.log(user);
+    // 1A!kYuPo
+
+    fetch ('https://httpbin.org/post', {
+        method: 'POST',
+        body: JSON.stringify(user),
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+    })
+    .then (response => response.json())
+    .then (user => console.log(user))
+    .catch (err => console.log(err))
+})
+
+
+
+
+// Валидация из старого дз
 let errors = [];
 
 function checkValidity(input) {
@@ -8,10 +40,6 @@ function checkValidity(input) {
     if (validity.valueMissing) {
         errors.push('Поле ' + input.placeholder + ' не заполнено');
     }
-
-    // if (!validity.typeMisMatch && !validity.valueMissing) {
-    //     errors.push('Введен неправильный тип данных')
-    // }
 
     if (input.id === 'name' && !validity.valueMissing) {
         let person = document.getElementById('name')  
@@ -61,7 +89,7 @@ function checkValidity(input) {
         let password = document.getElementById('password')
         let passwordFormat = /^(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/
         password.minLength = 3
-        password.maxLength = 8
+        password.maxLength = 12
         if (validity.tooShort) {
                 errors.push('Пароль не должен быть короче чем ' + password.minLength)            
         }
@@ -82,11 +110,6 @@ function checkValidity(input) {
             errors.push('Проверка пароля не прошла') 
         }
     }
-
-    // if (validity.valid) {
-    //     errors.push('Проверка').slice(0, 1)
-    // }
-    
 }
 
 function check() {

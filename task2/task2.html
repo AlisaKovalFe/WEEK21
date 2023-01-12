@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+            .wrap {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                font-family: Arial, Helvetica, sans-serif;
+                
+            }
+
+            .wrap-color {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 35rem;
+                height:max-content;
+                margin-top: 5rem;
+                background-color:antiquewhite;
+                border-radius: 1rem;
+            }
+
+            h1 {
+                margin: 1rem 0 3rem;
+            } 
+
+            label {
+                display: flex;
+                width: 15rem;
+                margin: 0;
+            }
+
+            .wrap-item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+
+            input {
+                font-size: 0.8rem;
+                width: 10rem;
+            }
+
+            .button {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                width: 13rem;
+                height: 2.5rem;
+                border-radius: 2rem;
+                font-size: 1.1rem;
+                border: none;
+                background-color:rgb(215, 186, 230);
+            }
+
+            button:hover {
+                background-color:rgb(195, 119, 233);
+            }
+
+            #errorMessage {
+                color: red;
+            }
+
+
+        </style>
+</head>
+
+
+<body>
+    <div class="wrap">
+        <form class="wrap-color" novalidate>
+            <h1>Форма регистрации</h1>
+            <div class="wrap-item">
+                <label for="name">Имя</label>
+                <input id="name"  type="text" placeholder="Имя" required>
+            </div>
+
+            <div class="wrap-item">
+                <label for="surname">Фамилия</label>
+                <input id="surname" type="text" placeholder="Фамилия" required>
+            </div>
+
+            <div class="wrap-item">
+                <label for="number">Возраст</label>
+                <input id="number" type="number" placeholder="количество лет" required>
+            </div>
+
+            <div class="wrap-item">
+                <label for="town">Город</label>
+                <input id="town" type="text" placeholder="Город" required>
+            </div>
+
+            <div class="wrap-item">
+                <label for="tel">Телефон</label>
+                <input id="tel" type="tel" placeholder="телефон" pattern="^(\+)?((\d{2,3}) ?\d|\d)(([ -]?\d)|( ?(\d{2,3}) ?)){5,12}\d$" required>
+            </div>
+
+
+            <div class="wrap-item">
+                <label for="email">Эл. почта</label>
+                <input id="email" type="email" placeholder="email" required>
+            </div>
+
+            <div class="wrap-item">
+                <label for="password">Пароль</label>
+                <input id="password" type="password" placeholder="Пароль"  required>
+            </div>
+
+            <div class="wrap-item">
+                <label for="repeatPassword">Повторите</label>
+                <input id="repeatPassword" type="password" placeholder="Повторите" required>
+            </div>
+
+            <div id="errorMessage"></div>
+            <button type="button" onclick="check()" class="button">Зарегистрироваться</button>
+        </form>
+    </div>
+
+    <script src="./task2.js"></script>
+</body>
+</html>

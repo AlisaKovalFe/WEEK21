@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/763/763755.png" type="image/png" />  
+
+    <style>
+        /* input:required:valid {
+            border-color: green;
+        }
+
+        input:optional:valid {
+            border-color: rgb(231, 225, 102);
+        }
+
+        input:invalid {
+            border-color: red;
+        }
+
+        #sex:checked {
+            border-color: red;
+        }
+
+        #out:out-of-range {
+            background-color: rgb(212, 130, 64);
+        }
+
+        textarea:invalid {
+            border-color: red;
+        } */
+    </style>
+
+</head>
+
+<body>
+    <h1>Опросник для обладателей котиков</h1>
+    <form >
+
+    <fieldset>
+        <legend>Имя питомца</legend>
+        <div>
+            <label for="nicname">Кличка питомца</label>
+            <input type="text" id="nicname" name="nicname" />
+            </div>
+
+        <div>
+            <label for="officialName">Имя по паспорту</label>
+            <input type="text" id="officialName" name="officialName" />
+        </div>
+    </fieldset>
+
+    <div>
+        <label for="date">Дата рождения питомца</label>
+        <input type="date" id="date" name="date"  /><br>
+        <label for="years">Количество лет</label>
+        <input name="years" id="years" type="number" min="1" max="30">
+    </div>
+
+    <div>Выберите породy питомца
+        <select name="breed" id="breed" >            
+            <option value="Британская короткошерстная">Британская короткошерстная</option>
+            <option value="Бенгальская кошка">Бенгальская кошка</option>
+            <option value="Сибирская кошка" >Сибирская кошка</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="feed">Предпочтения в питании</label><br />
+        <input type="checkbox" value="Сухой корм" name="feed" id="feed" />Сухой корм<br />
+        <input type="checkbox" value="Влажный корм" name="feed" />Влажный корм<br />
+        <input type="checkbox" value="Только дачные мыши" name="feed" />Только дачные мыши<br />
+    </div>
+
+    <div>
+        <label for="sex">Пол питомца</label><br />
+        <input type="radio" name="sex" id="sex"  value="самка" />Самка<br />
+        <input type="radio" name="sex" value="самец" />Самец<br />
+    </div>
+
+    <div>
+        <label for="petharacter">Выберите характер питомца</label>
+        <input list="characters" id="petCharacter" name="pet-character" />
+        <datalist id="characters">
+            <option value="Спокойный"></option>
+            <option value="Агрессивный"></option>
+            <option value="Меланхоличный"></option>
+            <option value="Активный"></option>
+        </datalist>
+    </div>
+
+    <fieldset>
+        <legend>Инфорамция о владельце</legend>
+        <div>
+            <label for="nameOwner">Имя</label>
+            <input name="nameOwner" type="text" id="nameOwner" placeholder="Иван Иванов" pattern="/[\p{Alpha}\p{M}\p{Nd}\p{Pc}\p{Join_C}]/gu"/>
+        </div>
+        <div>
+            <label for="phone">Телефон</label>
+            <input name="phone" type="tel" id="phone"  pattern="/^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/" minlength="10" maxlength="20" />
+        </div> 
+        <div>
+            <label for="eMail">Электронная почта</label>
+            <input name="eMail" type="email" id="eMail" placeholder="email@gmail.com" />
+        </div>
+        <div>Комментарии владельца
+            <textarea id="comments" name="comments" rows="3" cols="15" placeholder="Повадки и болезни питомца"  minlength="3" maxlength="15"></textarea>
+        </div>
+    </fieldset>
+
+    <div>
+        <button id="button">Отправить информацию</button><br /><br />
+    </d>
+
+    </form>
+
+    <script src="./task3.js"></script>
+</body>
+</html>

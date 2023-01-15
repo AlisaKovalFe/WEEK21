@@ -17,7 +17,18 @@
 
         img {
             margin-top: 2rem;
-            width: 18%;
+            margin-right: 1rem;          
+        }
+
+        .imgSize {
+            width: 15rem;  
+            height: 15rem;
+            object-fit:cover;
+        }
+
+        .imagesAll {
+            display: flex;
+            width: 80rem;
         }
 
         .wrap {
@@ -33,10 +44,10 @@
     <div class="wrap">
         <div>
             <input id="getGif" type="text" placeholder="имя GIF">
-            <button onclick="onSearch()">Искать!</button>
+            <button id="button">Искать!</button>
         </div>
 
-        <div>
+        <div class="imagesAll">
             <img id="firstImage" src="" alt="">
             <img id="secondImage" src="" alt="">
             <img id="thirdImage" src="" alt="">

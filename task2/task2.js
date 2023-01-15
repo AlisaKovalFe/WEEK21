@@ -1,4 +1,4 @@
-document.querySelector('button'). addEventListener('click', (event) => {
+document.querySelector('button').addEventListener('click', (event) => {
     event.preventDefault();
 
     let user = {
@@ -12,7 +12,7 @@ document.querySelector('button'). addEventListener('click', (event) => {
         repeatPassword: document.querySelector('#repeatPassword').value,
     }
     console.log(user);
-    // 1A!kYuPo
+    // для пароля использую -  1A!kYuPo
 
     fetch ('https://httpbin.org/post', {
         method: 'POST',

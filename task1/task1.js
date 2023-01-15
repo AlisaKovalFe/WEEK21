@@ -13,7 +13,7 @@ function onSearch() {
         }
 
         getGif.value = ''
-        // let gifURL = gif.data[0].images.original.url.split('?')[0]
+        // let gifURL = gif.data[0].images.original.url.split('?')[0] - это оставила на всякий, чтобы разобраться
     })
     .catch(err => console.log(err))
 }
